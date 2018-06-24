@@ -1,5 +1,6 @@
 # Aftership for Home Assistant
 Aftership state card for use in HomeAssistant
+![ha-aftership](https://github.com/tr1plus/ha-aftership/blob/master/images-README/aftership-hass.png "ha-aftership in action!")
 
 ## Story
 Recently I felt the need for a [HomeAssistant](https://www.home-assistant.io/) component which would allow me to track all my parcels I am expecting. As with all DIY people out there this list can get lengthy. I found some [others attempting to do something similar](https://community.home-assistant.io/t/aftership-package-tracking/24068), but this would only cause more and more problems for my specific case (logs getting flooded on missing packages, losing the overview on the HomeAssistant homepage, …)

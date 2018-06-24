@@ -1,0 +1,11 @@
+sensor:
+  #Package tracking aftership
+  - platform: rest
+    name: AfterShip Sensor
+    resource: https://api.aftership.com/v4/trackings/
+    value_template: '{{ value_json["data"]["count"]}}'
+    json_attributes:
+      - data
+    headers:
+      aftership-api-key: !secret aftership
+      Content-Type: application/json

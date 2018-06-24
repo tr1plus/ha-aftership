@@ -1,0 +1,81 @@
+<script>
+{
+  const _NAME = 'afterShip';
+  const _URL = 'http://www.triplustutorials.be/2018/06/22/package-tracking-state-card-in-homeassistant-using-aftership/';
+  const _VERSION = '1.0';
+
+  if (!window.CUSTOM_UI_LIST) window.CUSTOM_UI_LIST = [];
+  window.CUSTOM_UI_LIST.push({
+    name: _NAME,
+    url: _URL,
+    version: _VERSION
+  });
+}
+</script>
+<dom-module id='state-card-aftership'>
+  <template>
+    <style>
+		thead th{
+		  text-align: left;
+		}
+	
+		tbody tr:nth-child(odd) {
+		  background-color: #ffffff;
+		}
+
+		tbody tr:nth-child(even) {
+		  background-color: #f2f2f2;
+		}
+		
+		tbody tr:hover {background-color: #bababa;}
+
+    </style>
+	<div class="card">
+		<small><a href="https://secure.aftership.com/#/dashboard" target="_blank">Aftership Dashboard</a></small><br>
+		<b>Tracking: </b> {{stateObj.state}} items
+		<table style="width:100%">
+		 <thead>
+		  <tr>
+			<th>Item</th>
+			<th>Status</th> 
+			<th>Tracking Number</th>
+		  </tr>
+		 </thead>
+		 <tbody>
+		  <template is="dom-repeat" items="{{stateObj.attributes.data.trackings}}">
+           <tr>
+             <td>{{item.title}}</td>
+             <td>{{item.tag}}</td>
+			 <td>{{item.tracking_number}} <small>({{item.slug}})</small></td>
+           </tr>
+          </template>
+		 </tbody>
+		</table>
+	</div>
+  </template>
+</dom-module>
+
+<script>
+class StateCardAfterShip extends Polymer.Element {
+  static get is() { return 'state-card-aftership'; }
+
+  static get properties() {
+    return {
+      // Home Assistant object
+      hass: Object,
+      // inDialog is true if shown as more-info-card
+      inDialog: {
+        type: Boolean,
+        value: Object.state,
+      },
+      // includes state, config and more information of the entity
+      stateObj: Object,
+    };
+  }
+
+  _toStr(obj) {
+    return JSON.stringify(obj, null, 2);
+  }
+}
+customElements.define(StateCardAfterShip.is, StateCardAfterShip);
+</script>

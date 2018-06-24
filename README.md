@@ -26,3 +26,4 @@ Finally add the entry from the configuration.yaml file under your sensors compon
       aftership-api-key: !secret aftership
       Content-Type: application/json
 ```
+You will need an api key. Go to your [aftership api settings](https://secure.aftership.com/#/settings/api). I am using the default one.

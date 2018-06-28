@@ -15,6 +15,16 @@ Simply copy the www folder to your www folder so that the state-card-aftership.h
 
 Finally add the entry from the configuration.yaml file under your sensors component in your own configuration.yaml file.
 ```
+customize:
+  ##aftership
+  sensor.aftership_sensor:
+    custom_ui_state_card: state-card-aftership
+
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-aftership.html
+
+sensor:
   #Package tracking aftership
   - platform: rest
     name: AfterShip Sensor

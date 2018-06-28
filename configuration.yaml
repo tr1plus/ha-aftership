@@ -1,3 +1,12 @@
+customize:
+  ##aftership
+  sensor.aftership_sensor:
+    custom_ui_state_card: state-card-aftership
+
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-aftership.html
+
 sensor:
   #Package tracking aftership
   - platform: rest

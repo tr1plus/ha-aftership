@@ -37,3 +37,18 @@ sensor:
       Content-Type: application/json
 ```
 You will need an api key. Go to your [aftership api settings](https://secure.aftership.com/#/settings/api). I am using the default one.
+
+## LoveLace
+Just as I was creating this lovelace got released. As promised I made a very basic initial version. I will improve on this as I see I have more possibilities now as the card can be created in javascript only.
+Usage is similar, but the additional configuration should be done in ui-lovelace.yaml:
+```
+resources:
+  - url: /local/custom_ui/state-card-aftership.js
+    type: js
+views:
+- name: Example
+  cards:
+  - type: "custom:state-card-aftership-ll"
+    entity: sensor.aftership_sensor
+```
+

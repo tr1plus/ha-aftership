@@ -1,0 +1,10 @@
+title: My Awesome Home
+
+resources:
+  - url: /local/custom_ui/state-card-aftership.js
+    type: js
+views:
+- name: Example
+  cards:
+  - type: "custom:state-card-aftership-ll"
+    entity: sensor.aftership_sensor

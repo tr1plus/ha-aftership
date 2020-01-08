@@ -1,3 +1,12 @@
+# UPDATE: DEPRECATED
+There are now more standard and better approaches to doing this. I like to think this little thing was a push in the right direction :)
+
+https://www.home-assistant.io/integrations/aftership/
+
+https://github.com/iantrich/aftership-card
+
+
+
 # Aftership for Home Assistant
 Aftership state card for use in HomeAssistant
 ![ha-aftership](https://github.com/tr1plus/ha-aftership/blob/master/images-README/aftership-hass.png "ha-aftership in action!")
